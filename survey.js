@@ -36,45 +36,45 @@ class Survey {
   }
 
 
-  queryName(name) {
+  queryName(callback) {
     this.r1.question('What is your name? You can use a nickname as well. ', (answer) => {
-      name(answer);
+      callback(answer);
     });
   }
 
-  queryActivity(activity) {
+  queryActivity(callback) {
     this.r1.question('What is an activity you like doing?', (answer) => {
-      activity(answer);
+      callback(answer);
     });
   }
 
-  queryMusic(music) {
+  queryMusic(callback) {
     this.r1.question('What do you listen to while doing that?', (answer) => {
-      music(answer);
+      callback(answer);
     });
   }
 
-  queryMeal(meal) {
+  queryMeal(callback) {
     this.r1.question('Which meal is your favourite (eg: dinner, brunch, etc.)', (answer) => {
-      meal(answer);
+      callback(answer);
     });
   }
 
-  queryFood(food) {
+  queryFood(callback) {
     this.r1.question('What\'s your favourite thing to eat for that meal?', (answer) => {
-      food(answer);
+      callback(answer);
     });
   }
 
-  querySport(sport) {
+  querySport(callback) {
     this.r1.question('Which sport is your absolute favourite?', (answer) => {
-      sport(answer);
+      callback(answer);
     });
   }
 
-  querySuperpower(superpower) {
+  querySuperpower(callback) {
     this.r1.question('What is your superpower? In a few words, tell us what you are amazing at!', (answer) => {
-      superpower(answer);
+      callback(answer);
     });
   }
 
@@ -84,10 +84,10 @@ class Survey {
       this.queryActivity((activity) => {
         this.queryMusic((music) => {
           this.queryMeal((meal) => {
-            this.queryFood((food) => {
+            this.queryFood((food) => {n
               this.querySport((sport) => {
                 this.querySuperpower((superpower) => {
-                  console.log(`Thank you for your valuable feedback: ${answer}`);
+                  console.log(`Thank you for your valuable feedback: ${name}`);
                   this.r1.close(); // stops the survey
                 });
               });
